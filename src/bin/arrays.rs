@@ -86,5 +86,14 @@ fn main(){
 
      let mut arr7 = [10,20,30];
      pass_by_reference(&mut arr7);
-     print!("Inside main {:?}",arr7);
+     println!("Inside main {:?}",arr7);
+
+     /* let N: usize = 20;
+     let arr = [0; N]; //Error: non-constant used with constant
+     print!("{}",arr[10]) */
+
+     const N: usize = 20; 
+     // pointer sized
+     let arr8 = [0; N];
+     println!("arr8 {:?}",arr8)
  }
