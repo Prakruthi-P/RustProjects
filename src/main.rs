@@ -8,9 +8,9 @@ Integer Datatype
 
 Sr Size	    Signed	Unsigned
 1	8 bit	 i8	    u8
-2	16 bit	 i16	    u16
-3	32 bit	 i32	    u32
-4	64 bit	 i64	    u64
+2	16 bit	 i16	u16
+3	32 bit	 i32	u32
+4	64 bit	 i64	u64
 5	128 bit	 i128	u128
 6	Arch	 isize	usize
 */

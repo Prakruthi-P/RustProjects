@@ -41,7 +41,7 @@ fn main(){
 
    Rust supports variables with different data types while shadowing.
    */
-  let salary = 100.00;
+  //let salary = 100.00;
   let salary = 1.50 ; 
   // reads first salary
   println!("The value of salary is :{}",salary);
