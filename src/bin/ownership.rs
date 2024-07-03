@@ -48,9 +48,13 @@ fn main(){
  
     println!("{:?}",v2);*/
 
-    let u = vec![1,20,3];     // vector v owns the object in heap
-    let u2 = v;              // moves ownership to v2
+    /*let v = vec![1,20,3];     // vector v owns the object in heap
+    let v2 = v;              // moves ownership to v2
     display(u2);             // v2 is moved to display and v2 is invalidated
     println!("In main {:?}",u2);    //v2 is No longer usable here
+    */
+    let u1 = 10;
+    let u2 = u1;  // u1 value copied(not moved) to u2
  
+    println!("u1 = {}",u1);
  }
