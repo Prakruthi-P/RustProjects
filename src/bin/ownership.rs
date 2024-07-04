@@ -33,28 +33,45 @@ The ownership of value can be transferred by −
 * Passing value to a function.
 * Returning value from a function.
 */
-fn display(v:Vec<i32>){
-    println!("inside display {:?}",v);
- }
+fn take_ownership(s: String) {
+    println!("{}", s);
+}
+fn take_and_give_back(s: String) -> String {
+    println!("{}", s);
+    s
+}
 fn main(){
-    /*let v = vec![1,2,3]; 
-    // vector v owns the object in heap
-    //only a single variable owns the heap memory at any given time
-    let v2 = v; 
-    // here two variables owns heap value,
-    //two pointers to the same content is not allowed in rust
-    //Rust is very smart in terms of memory access ,so it detects a race condition
-    //as two variables point to same heap
- 
-    println!("{:?}",v2);*/
+    let s1 = String::from("hello");
+    let s2 = s1.clone(); // s1 is still valid
+    println!("s1 = {}, s2 = {}", s1, s2); // this is fine
 
-    /*let v = vec![1,20,3];     // vector v owns the object in heap
-    let v2 = v;              // moves ownership to v2
-    display(u2);             // v2 is moved to display and v2 is invalidated
-    println!("In main {:?}",u2);    //v2 is No longer usable here
-    */
+   /* 
+    Ownership and Primitive Types
+    Copy
+    Some types, like integers, are Copy. 
+    If a type has the Copy trait, then an older variable is still usable after assignment. 
+    Rust implements Copy for types that are simple and fixed-size.
+   */ 
+    let x = 5;
+    let y = x; // x is still valid
+    println!("x = {}, y = {}", x, y); // this is fine
+
     let u1 = 10;
     let u2 = u1;  // u1 value copied(not moved) to u2
  
     println!("u1 = {}",u1);
+    println!("u2 = {}",u2);
+
+
+    /*When you pass a value to a function, ownership moves to the function. */
+    let s = String::from("hello");
+    take_ownership(s);
+    // println!("{}", s); // this would cause a compile-time error because s is no longer valid
+
+    /*If you want to keep using the value after the function call, you need to return it. */
+    let s1 = String::from("hello");
+    let s1 = take_and_give_back(s1); // s is returned and reassigned to s
+    println!("{}", s1); // this is fine
+
+
  }
