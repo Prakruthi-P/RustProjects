@@ -3,8 +3,10 @@ A logical group of code is called a Module.
 Multiple modules are compiled into a unit called crate. 
 Rust programs may contain a binary crate or a library crate. 
 A binary crate is an executable project that has a main() method. 
-A library crate is a group of components that can be reused in other projects. Unlike a binary crate, a library crate does not have an entry point (main() method). 
-The Cargo tool is used to manage crates in Rust. For example, the network module contains networking related functions and the graphics module contains drawing-related functions. 
+A library crate is a group of components that can be reused in other projects. 
+Unlike a binary crate, a library crate does not have an entry point (main() method). 
+The Cargo tool is used to manage crates in Rust. 
+For example, the network module contains networking related functions and the graphics module contains drawing-related functions. 
 Modules are similar to namespaces in other programming languages. 
 Third-party crates can be downloaded using cargo from crates.io.
 

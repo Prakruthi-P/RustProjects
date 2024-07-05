@@ -71,8 +71,7 @@ fn main(){
     println!("\nfile is removed");
 
     //append data to a file
-    let mut file = OpenOptions::new().append(true).open("inputFile.txt").expect(
-        "cannot open file");
+    let mut file = OpenOptions::new().append(true).open("inputFile.txt").expect("cannot open file");
      file.write_all("Hello World".as_bytes()).expect("write failed");
      file.write_all("\nTutorialsPoint".as_bytes()).expect("write failed");
      println!("file append success");

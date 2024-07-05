@@ -29,12 +29,14 @@ let variable_name:[dataType;size] = [default_value_for_elements,size];
 
  
 */
-fn pass_by_value(mut arr:[i32;3]){
-    for i in 0..3 {
+//mutable and transfer of ownership
+fn pass_by_value(mut arr:  [i32;3]){
+    for i in 0..arr.len() {
        arr[i] = 0;
     }
     println!("Inside update {:?}",arr);
  }
+ //mutable and borrow
  fn pass_by_reference(arr:&mut [i32]){
     for i in 0..arr.len() {
        arr[i] = 0;
